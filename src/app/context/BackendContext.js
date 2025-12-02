@@ -14,6 +14,9 @@ export const BackendProvider = ({ children }) => {
     return null;
   });
 
+  // loading state
+  const [loading, setLoading] = useState(false);
+
   // Whenever backendData changes, save it to localStorage
   useEffect(() => {
     if (backendData !== null) {
@@ -29,7 +32,13 @@ export const BackendProvider = ({ children }) => {
 
   return (
     <BackendContext.Provider
-      value={{ backendData, setBackendData, clearBackendData }}
+      value={{
+        backendData,
+        setBackendData,
+        loading,
+        setLoading,
+        clearBackendData,
+      }}
     >
       {children}
     </BackendContext.Provider>

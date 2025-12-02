@@ -29,10 +29,10 @@ export default function Home() {
       <div className="lg:px-[11rem] px-4 mt-10 md:flex-row md:justify-between md:items-center flex flex-col">
         {/* div of writing */}
         <div className=" md:w[90%] w-full">
-          <h1 className="font-inter font-medium text-[26px] sm:text-[32px] lg:text-[30px] leading-[1.15] tracking-normal text-[#111827] w-full lg:w-[70%] ">
+          <h1 className=" font-medium text-[26px] sm:text-[32px] lg:text-[30px] leading-[1.15] tracking-normal text-[#111827] w-full lg:w-[70%] ">
             Check Credit Score Using just Digital Footprints. 
           </h1>
-          <h1 className="font-inter font-medium text-[26px] sm:text-[32px] lg:text-[30px] leading-[1.15] tracking-normal text-[#111827] w-full lg:w-[70%]">
+          <h1 className="font-medium text-[26px] sm:text-[32px] lg:text-[30px] leading-[1.15] tracking-normal text-[#111827] w-full lg:w-[70%]">
             Instant,Fair and Secured.
           </h1>
           <p className="md:w-[80%] tracking-wide mb-10 py-4">
@@ -87,7 +87,7 @@ export default function Home() {
             {content.map((item, index) => (
               <div
                 key={index}
-                className="flex-1 bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+                className="flex-1 bg-[#E9EBED] p-6 rounded-lg shadow-md flex flex-col items-center text-center"
               >
                 <div className="w-24 h-24 mb-4 relative drop-shadow-sm">
                   <Image

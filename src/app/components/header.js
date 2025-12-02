@@ -52,22 +52,16 @@ export default function Header() {
               className="py-2 px-2 w-full hover:bg-[#2D85FF] hover:text-white rounded"
               onClick={() => setIsOpen(false)}
             >
-              About Us
+              Home
             </Link>
             <Link
               href="#"
               className="py-2 px-2 w-full hover:bg-[#2D85FF] hover:text-white rounded"
               onClick={() => setIsOpen(false)}
             >
-              Partners
+             About Us
             </Link>
-            <Link
-              href="#"
-              className="py-2 px-2 w-full hover:bg-[#2D85FF] hover:text-white rounded"
-              onClick={() => setIsOpen(false)}
-            >
-              FAQ
-            </Link>
+         
           </div>
         )}
       </nav>
