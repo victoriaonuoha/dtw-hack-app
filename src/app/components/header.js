@@ -8,20 +8,18 @@ export default function Header() {
     <div>
       <nav className="flex items-center justify-between px-[1rem] lg:px-20 mt-4 relative">
         {/* Logo */}
-        <h1 className="text-3xl text-[#2D85FF] font-bold">CredScore</h1>
+        <h1 className="text-4xl text-[#04060a] font-medium">CredScore</h1>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center justify-between w-[50%]">
+        <div className="hidden md:flex items-center justify-between w-[40%]">
+          <Link href="#" className="hover:border-b-4">
+            Home
+          </Link>
           <Link href="#" className="hover:border-b-4">
             About Us
           </Link>
-          <Link href="#" className="hover:border-b-4">
-            Partners
-          </Link>
 
-          <Link href="#" className="hover:border-b-4">
-            FAQ
-          </Link>
+          
           <Link
             href="#"
             className="bg-[#2D85FF] text-white px-4 py-2 rounded-lg hover:underline"
