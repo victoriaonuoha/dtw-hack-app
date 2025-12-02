@@ -28,13 +28,15 @@ export default function Home() {
       <Header />
       <div className="lg:px-[11rem] px-4 mt-10 md:flex-row md:justify-between md:items-center flex flex-col">
         {/* div of writing */}
-        <div className=" md:w[50%] w-full">
-          <h1 className="text-[2.7rem] mb-5 lg:w-[50%] md:w-[70%] w-full md:tracking-wide font-bold text-[#2D85FF]">
-            AI Credit Score Checker
+        <div className=" md:w[90%] w-full">
+          <h1 className="font-inter font-medium text-[26px] sm:text-[32px] lg:text-[30px] leading-[1.15] tracking-normal text-[#111827] w-full lg:w-[70%] ">
+            Check Credit Score Using just Digital Footprints. 
           </h1>
-          <p className="md:w-[80%] tracking-wide mb-10">
-            Get an instant Credit score using your phone number and digital
-            behaviour to unlock your loan status.
+          <h1 className="font-inter font-medium text-[26px] sm:text-[32px] lg:text-[30px] leading-[1.15] tracking-normal text-[#111827] w-full lg:w-[70%]">
+            Instant,Fair and Secured.
+          </h1>
+          <p className="md:w-[80%] tracking-wide mb-10 py-4">
+            Instantly unlock loan status using phone number and digital behaviour.
           </p>
           <div className="flex justify-center items-center md:justify-start">
             <div>
