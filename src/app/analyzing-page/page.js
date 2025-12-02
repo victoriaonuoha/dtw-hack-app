@@ -63,7 +63,7 @@ export default function AnalyzingPage() {
           (backendData.score_result.score_factors.income_stability
             .momo_savings_ratio +
             backendData.score_result.score_factors.income_stability
-              .momo_savings_ratio) /
+              .employment_status) /
             2
         ),
         p6: Math.round(
@@ -97,7 +97,7 @@ export default function AnalyzingPage() {
   const totalTime = 20; // seconds
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-10">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-2">
       {/* Main Circular Progress */}
       <div className="w-40 h-40">
         <CircularProgressbar
@@ -129,37 +129,37 @@ export default function AnalyzingPage() {
         />
         <ProgressCard
           icon="/images/group (1).png"
-          title="Previous Loan App History"
+          title="Loan App History"
           label={backendData ? "Completed" : "Verifying loan records..."}
           targetValue={mockDatap.p2}
           speed={10}
         />
         <ProgressCard
           icon="/images/group (2).png"
-          title="Mobile Transaction Pattern"
+          title="Sim Top-up Pattern"
           label={backendData ? "Completed" : "Analyzing top-up trends..."}
           targetValue={mockDatap.p3}
           speed={10}
         />
         <ProgressCard
-          icon="/images/streamline-cyber-color_network.png"
+          icon="/images/group (3).png"
           title="Sim Stability Check"
           label={backendData ? "Completed" : "Evaluating sim usage pattern..."}
           targetValue={mockDatap.p4}
           speed={10}
         />
         <ProgressCard
-          icon="/images/group (3).png"
-          title="Income Stability"
+          icon="/images/streamline-cyber-color_network.png"
+          title="Income Pattern"
           label={backendData ? "Completed" : "Evaluating income flow"}
           targetValue={mockDatap.p5}
           speed={10}
         />
         <ProgressCard
-          icon="/images/group (3).png"
+          icon="/images/betting.png"
           title="Betting App Usuage"
           label={backendData ? "Completed" : "Verifying betting frequency"}
-          targetValue={mockDatap.p5}
+          targetValue={mockDatap.p6}
           speed={10}
         />
       </div>

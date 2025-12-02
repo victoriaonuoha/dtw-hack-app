@@ -8,8 +8,18 @@ export default function ProgressCard({
   label,
   targetValue = 0,
   speed = 40,
+  useColor = false,
 }) {
   const [progress, setProgress] = useState(0);
+  const getColor = (value) => {
+    if (value >= 0 && value <= 39) return "bg-yellow-500";
+    if (value >= 40 && value <= 50) return "bg-blue-600";
+    if (value > 50 && value <= 100) return "bg-green-600";
+    return "bg-gray-400";
+  };
+
+    // If useColor is false → default blue
+  const progressColor = useColor ? getColor(targetValue) : "bg-blue-600";
 
   useEffect(() => {
     // Reset progress when targetValue changes
@@ -37,9 +47,9 @@ export default function ProgressCard({
 
       <h2 className="text-xs font-semibold text-end">{progress}%</h2>
 
-      <div className="w-full h-4 bg-gray-200 rounded-full mt-2">
+      <div className="w-full h-6 bg-gray-200 rounded-full mt-2">
         <div
-          className="h-full bg-blue-600 rounded-full"
+          className={`h-full rounded-full ${progressColor}`}
           style={{ width: `${progress}%` }}
         ></div>
       </div>

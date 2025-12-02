@@ -11,7 +11,6 @@ import ProgressCard from "../components/ProgressCard";
 import { useBackend } from "../context/BackendContext";
 import { HiDownload } from "react-icons/hi";
 
-
 export default function CreditScoreScreen() {
   const { backendData, loading } = useBackend();
 
@@ -165,73 +164,80 @@ export default function CreditScoreScreen() {
           label="Loading transactions..."
           targetValue={p1}
           speed={10}
+          useColor={true}
         />
         <ProgressCard
           icon="/images/group (1).png"
-          title="Previous Loan History"
+          title="Loan App History"
           label="Verifying loan records..."
           targetValue={p2}
           speed={10}
+          useColor={true}
         />
         <ProgressCard
           icon="/images/group (2).png"
-          title="Mobile Transaction Pattern"
+          title="Sim Top-up Pattern"
           label="Analyzing top-up trends..."
           targetValue={p3}
           speed={10}
+          useColor={true}
         />
         <ProgressCard
-          icon="/images/streamline-cyber-color_network.png"
+          icon="/images/group (3).png"
           title="SIM Stability Check"
           label="Evaluating SIM usage..."
           targetValue={p4}
           speed={10}
+          useColor={true}
         />
         <ProgressCard
-          icon="/images/group (3).png"
-          title="Income Stability"
+          icon="/images/streamline-cyber-color_network.png"
+          title="Income Pattern"
           label="Evaluating income flow..."
           targetValue={p5}
           speed={10}
+          useColor={true}
         />
         <ProgressCard
-          icon="/images/group (3).png"
-          title="Income Stability"
-          label="Evaluating income flow..."
+          icon="/images/betting.png"
+          title="Betting App Usuage"
+          label="Verifying Betting Frequency..."
           targetValue={p6}
           speed={10}
+          useColor={true}
         />
       </div>
 
       {/* BREAKDOWN */}
-      <h2 className="text-3xl font-semibold mb-0 mt-8 w-full lg:w-[70%]">
+      <h2 className="text-3xl font-semibold mb-0 mt-8 w-full lg:w-[70%] ">
         Score Breakdown
       </h2>
+      <div className="px-2 md:px-0 lg:w-[70%] w-full">
+        <div className=" mt-2 bg-[#E9EBED] p-4 rounded-xl shadow ">
+          <div className="space-y-5 text-xl md:text-2xl">
+            <BreakdownItem
+              label="Loan History"
+              value={breakdown.loan_app_pattern}
+            />
+            <BreakdownItem
+              label="Income Stability"
+              value={breakdown.income_stability}
+            />
+            <BreakdownItem
+              label="Transaction Consistency"
+              value={breakdown.mobile_transaction_pattern}
+            />
 
-      <div className="lg:w-[70%] w-full mt-2 bg-[#E9EBED] p-4 rounded-xl shadow">
-        <div className="space-y-5 text-xl md:text-2xl">
-          <BreakdownItem
-            label="Loan History"
-            value={breakdown.loan_app_pattern}
-          />
-          <BreakdownItem
-            label="Income Stability"
-            value={breakdown.income_stability}
-          />
-          <BreakdownItem
-            label="Transaction Consistency"
-            value={breakdown.mobile_transaction_pattern}
-          />
+            <div className="flex gap-12 items-center justify-between p-3 rounded-lg border-[#11182780]  border-b">
+              <div className="flex gap-2 items-center whitespace-nowrap">
+                <img src="/images/bxs_error.png" alt="" />
+                <span className="text-gray-700">Risk Flag</span>
+              </div>
 
-          <div className="flex gap-12 items-center justify-between p-3 rounded-lg border">
-            <div className="flex gap-2 items-center whitespace-nowrap">
-              <img src="/images/bxs_error.png" alt="" />
-              <span className="text-gray-700">Risk Flag</span>
+              <span className="text-yellow-700 md:text-[22px] text-right text-12px max-w-[30rem]">
+                {breakdown.risk_flag}
+              </span>
             </div>
-
-            <span className="text-yellow-700 md:text-[22px] text-12px max-w-[30rem]">
-              {breakdown.risk_flag}
-            </span>
           </div>
         </div>
       </div>
