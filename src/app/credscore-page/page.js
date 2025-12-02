@@ -159,7 +159,7 @@ export default function CreditScoreScreen() {
       {/* PROGRESS CARDS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12 w-full px-6">
         <ProgressCard
-          icon="/images/group.png"
+          icon="/images/Group.png"
           title="Mobile Money Patterns"
           label="Loading transactions..."
           targetValue={p1}
@@ -167,7 +167,7 @@ export default function CreditScoreScreen() {
           useColor={true}
         />
         <ProgressCard
-          icon="/images/group (1).png"
+          icon="/images/Group (1).png"
           title="Loan App History"
           label="Verifying loan records..."
           targetValue={p2}
@@ -175,7 +175,7 @@ export default function CreditScoreScreen() {
           useColor={true}
         />
         <ProgressCard
-          icon="/images/group (2).png"
+          icon="/images/Group (2).png"
           title="Sim Top-up Pattern"
           label="Analyzing top-up trends..."
           targetValue={p3}
@@ -183,7 +183,7 @@ export default function CreditScoreScreen() {
           useColor={true}
         />
         <ProgressCard
-          icon="/images/group (3).png"
+          icon="/images/Group (3).png"
           title="SIM Stability Check"
           label="Evaluating SIM usage..."
           targetValue={p4}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // ✅ missing import
 import { useBackend } from "../context/BackendContext";
+import "flag-icons/css/flag-icons.min.css";
 
 export default function Home() {
   const router = useRouter();
@@ -84,7 +85,11 @@ export default function Home() {
         {/* PHONE INPUT */}
         <div className="bg-white rounded-xl border p-4 flex items-center space-x-3">
           <div className="flex items-center space-x-2">
-            <span className="text-lg">🇳🇬</span>
+            <div style={{ fontSize: "1rem" }}>
+              {" "}
+              {/* Adjust size as needed */}
+              <span className="fi fi-ng" title="Nigeria Flag"></span>
+            </div>
             <span className="font-medium">+234</span>
           </div>
 
@@ -108,7 +113,7 @@ export default function Home() {
             checked={consent}
             onChange={(e) => setConsent(e.target.checked)}
           />
-          <span>I consent to processing my phone meta-data</span>
+          <span>I consent to processing this phone's meta-data</span>
         </label>
 
         {/* BUTTON triggers backend send */}

@@ -121,28 +121,28 @@ export default function AnalyzingPage() {
       {/* Grid of Progress Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mt-12 w-full">
         <ProgressCard
-          icon="/images/group.png"
+          icon="/images/Group.png"
           title="Mobile Money Patterns"
           label={backendData ? "Completed" : "Loading transactions..."}
           targetValue={mockDatap.p1}
           speed={10}
         />
         <ProgressCard
-          icon="/images/group (1).png"
+          icon="/images/Group (1).png"
           title="Loan App History"
           label={backendData ? "Completed" : "Verifying loan records..."}
           targetValue={mockDatap.p2}
           speed={10}
         />
         <ProgressCard
-          icon="/images/group (2).png"
+          icon="/images/Group (2).png"
           title="Sim Top-up Pattern"
           label={backendData ? "Completed" : "Analyzing top-up trends..."}
           targetValue={mockDatap.p3}
           speed={10}
         />
         <ProgressCard
-          icon="/images/group (3).png"
+          icon="/images/Group (3).png"
           title="Sim Stability Check"
           label={backendData ? "Completed" : "Evaluating sim usage pattern..."}
           targetValue={mockDatap.p4}

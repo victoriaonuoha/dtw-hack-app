@@ -38,10 +38,10 @@ export default function Home() {
           <p className="md:w-[80%] tracking-wide mb-10 py-4">
             Instantly unlock loan status using phone number and digital behaviour.
           </p>
-          <div className="flex justify-center items-center md:justify-start">
+          <div className="md:flex  md:items-center md:justify-start">
             <div>
               {" "}
-              <button className="hover:-translate-y-0.5">
+              <button className="hover:-translate-y-0.5 block md:inline mb-8 md:mb-0">
                 <Link
                   href="/input-page"
                   className="bg-[#2D85FF] text-white px-4 py-3 rounded-lg  mr-5   "
@@ -49,7 +49,7 @@ export default function Home() {
                   Check My Score
                 </Link>
               </button>
-              <button className="hover:-translate-y-0.5">
+              <button className="hover:-translate-y-0.5 block md:inline">
                 <Link
                   href="#"
                   className="border border-blue-700 px-4 py-3 rounded-lg"
