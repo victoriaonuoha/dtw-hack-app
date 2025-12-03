@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Confetti from "react-confetti";
 import {
   CircularProgressbarWithChildren,
@@ -32,21 +32,49 @@ export default function CreditScoreScreen() {
   const scoreColor = getScoreColor(animatedScore);
 
   // -------- Score Animation --------
-  useEffect(() => {
-    if (!score) return;
+//   useEffect(() => {
+//     if (!score) return;
 
-    const duration = 2500; // <-- slower animation (2.5 seconds)
-    const startTime = performance.now();
+//     const duration = 2500; // <-- slower animation (2.5 seconds)
+//     const startTime = performance.now();
 
-    const animate = (currentTime) => {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      setAnimatedScore(progress * score);
+//     const animate = (currentTime) => {
+//       const progress = Math.min((currentTime - startTime) / duration, 1);
+//       setAnimatedScore(progress * score);
 
-      if (progress < 1) requestAnimationFrame(animate);
-    };
+//       if (progress < 1) requestAnimationFrame(animate);
+//     };
 
-    requestAnimationFrame(animate);
-  }, [score]);
+//     requestAnimationFrame(animate);
+//   }, [score]);
+const prevScoreRef = useRef(0);
+
+useEffect(() => {
+  if (score === null || score === undefined) return;
+
+  const startValue = prevScoreRef.current;   // animate FROM previous value
+  const endValue = score;                    // animate TO new value
+
+  const duration = 2000; // 2 seconds
+  const startTime = performance.now();
+
+  const animate = (currentTime) => {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+
+    const currentValue =
+      startValue + (endValue - startValue) * progress;
+
+    setAnimatedScore(currentValue);
+
+    if (progress < 1) requestAnimationFrame(animate);
+  };
+
+  requestAnimationFrame(animate);
+
+  // Update previous score for next animation
+  prevScoreRef.current = score;
+}, [score]);
+
 
   // -------- Confetti --------
   useEffect(() => {
