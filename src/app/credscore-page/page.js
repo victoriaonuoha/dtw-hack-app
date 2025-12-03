@@ -23,7 +23,7 @@ export default function CreditScoreScreen() {
   const score = backendData.score_result.score;
   const MAX_SCORE = 100;
 
-  // -------- Score Color --------
+  // Score Color 
   const getScoreColor = (val) => {
     if (val <= 30) return "#FACC15"; // yellow
     if (val <= 50) return "#3B82F6"; // blue
@@ -31,7 +31,7 @@ export default function CreditScoreScreen() {
   };
   const scoreColor = getScoreColor(animatedScore);
 
-  // -------- Score Animation --------
+  //  Score Animation 
 
 const prevScoreRef = useRef(0);
 
@@ -41,7 +41,7 @@ useEffect(() => {
   const startValue = prevScoreRef.current;  // start from previous score
   const endValue = score;                   // animate to new score
 
-  const duration = 2000; // 2 seconds
+  const duration = 1000; // 2 seconds
   const startTime = performance.now();
 
   const animate = (currentTime) => {
@@ -65,6 +65,9 @@ useEffect(() => {
 
 
   // -------- Confetti --------
+
+
+ 
   useEffect(() => {
     if (Math.round(animatedScore) === score && score >= 50) {
       setShowConfetti(true);
@@ -147,6 +150,7 @@ useEffect(() => {
             pathColor: scoreColor,
             trailColor: "#E5E7EB",
             strokeLinecap: "round",
+            
           })}
         >
           <div className="text-center">
