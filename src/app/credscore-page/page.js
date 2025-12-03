@@ -32,28 +32,14 @@ export default function CreditScoreScreen() {
   const scoreColor = getScoreColor(animatedScore);
 
   // -------- Score Animation --------
-//   useEffect(() => {
-//     if (!score) return;
 
-//     const duration = 2500; // <-- slower animation (2.5 seconds)
-//     const startTime = performance.now();
-
-//     const animate = (currentTime) => {
-//       const progress = Math.min((currentTime - startTime) / duration, 1);
-//       setAnimatedScore(progress * score);
-
-//       if (progress < 1) requestAnimationFrame(animate);
-//     };
-
-//     requestAnimationFrame(animate);
-//   }, [score]);
 const prevScoreRef = useRef(0);
 
 useEffect(() => {
-  if (score === null || score === undefined) return;
+  if (score == null) return;
 
-  const startValue = prevScoreRef.current;   // animate FROM previous value
-  const endValue = score;                    // animate TO new value
+  const startValue = prevScoreRef.current;  // start from previous score
+  const endValue = score;                   // animate to new score
 
   const duration = 2000; // 2 seconds
   const startTime = performance.now();
@@ -61,6 +47,7 @@ useEffect(() => {
   const animate = (currentTime) => {
     const progress = Math.min((currentTime - startTime) / duration, 1);
 
+    // Linear interpolation between startValue → endValue
     const currentValue =
       startValue + (endValue - startValue) * progress;
 
@@ -71,9 +58,10 @@ useEffect(() => {
 
   requestAnimationFrame(animate);
 
-  // Update previous score for next animation
+  // Save new score for next animation
   prevScoreRef.current = score;
 }, [score]);
+
 
 
   // -------- Confetti --------
